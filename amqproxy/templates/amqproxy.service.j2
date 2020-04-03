@@ -1,0 +1,15 @@
+[Unit]
+Description=AMQProxy server for connection and channel pooling
+Documentation=https://github.com/cloudamqp/amqproxy
+Requires=network.target
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/amqproxy -l {{amqp_proxy_listen_address}} -p {{amqp_proxy_listen_port}} {{amqp_proxy_upstream_host}}
+Restart=on-failure
+User=nobody
+Group=nogroup
+LimitNOFILE=8192
+
+[Install]
+WantedBy=multi-user.target

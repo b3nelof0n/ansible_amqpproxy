@@ -1,0 +1,3 @@
+amqp_proxy_listen_address: 127.0.0.1
+amqp_proxy_listen_port: 5673
+amqp_proxy_upstream_host: amqp://127.0.0.1:5672
